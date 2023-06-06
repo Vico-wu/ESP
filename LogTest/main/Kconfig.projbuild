@@ -1,0 +1,9 @@
+menu "点灯配置"
+    config LED_GPIO_NUM
+        int
+        prompt "ESP主板到LED的GPIO号码"
+        range 0 39
+        default 2
+        help
+            一般来说这个LED GPIO 号码会写在板子的正面或者背面
+endmenu
