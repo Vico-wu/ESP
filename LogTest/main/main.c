@@ -2,9 +2,14 @@
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/Task.h"
+#include "driver/gpio.h"
+#define LEDPIN CONFIG_LED_GPIO_NUM
+#define DELAY_MS CONFIG_DELAY_TIME_MS
+
 const char* TagTraffic = "交通灯";
 bool LogLvl =false;
 int count = 100;
+
 char ptrTaskList[250];
 // void app_main(void)
 // {
@@ -29,11 +34,24 @@ char ptrTaskList[250];
 // }
 void app_main(void)
 {
+    uint32_t flgLedStatus_u32 = 0;
+    gpio_reset_pin(LEDPIN);
+    gpio_set_direction(LEDPIN,GPIO_MODE_OUTPUT);   
     vTaskList(ptrTaskList);
     printf("*****************************************\n");
     printf("Task     State     Prio     Stack     Num\n");
     printf("*****************************************\n");
     printf(ptrTaskList);
     printf("*****************************************\n");
+    while(1)
+    {
+        flgLedStatus_u32 = !flgLedStatus_u32;
+        if (!flgLedStatus_u32)
+            ESP_LOGI("当前指示灯状态","关闭");
+        else
+            ESP_LOGE("当前指示灯状态","打开");
 
+        gpio_set_level(LEDPIN,flgLedStatus_u32);
+        vTaskDelay(DELAY_MS/portTICK_PERIOD_MS);
+    }
 }

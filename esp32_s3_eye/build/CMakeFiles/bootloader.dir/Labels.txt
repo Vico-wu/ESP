@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/VSCode/ESP32/esp32_s3_eye/build/CMakeFiles/bootloader
+D:/VSCode/ESP32/esp32_s3_eye/build/CMakeFiles/bootloader.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/CMakeFiles/bootloader-complete.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/VSCode/ESP32/esp32_s3_eye/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

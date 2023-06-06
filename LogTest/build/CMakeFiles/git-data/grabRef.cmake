@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "D:/VSCode/ESP32/LogTest/build/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "C:/Users/77021/esp/esp-idf/.git")
+set(GIT_DIR "D:/VSCode/ESP32/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)
