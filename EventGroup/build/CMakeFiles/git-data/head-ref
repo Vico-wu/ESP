@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 d834a9a2c34bf2b4fd09a667540d5ce7f2bb081e Archie <770211411@qq.com> 1686077308 +0200	commit (initial): Initial version
+d834a9a2c34bf2b4fd09a667540d5ce7f2bb081e 41b7aaee03ecffb83c53a2bf191bec507f7bdd32 Archie <770211411@qq.com> 1686085712 +0200	commit: add esp32s3 chip example esp-who
+41b7aaee03ecffb83c53a2bf191bec507f7bdd32 4892767b3aa54a2ed006e4469831b746f260c987 Archie <770211411@qq.com> 1686180872 +0200	commit: Add Print hardware information example. this function was used cpp file to compile.
+4892767b3aa54a2ed006e4469831b746f260c987 c0e0a85b6705192d986684e45ea0cbc743d81e18 Archie <770211411@qq.com> 1686223936 +0200	commit: add nvs function.
+c0e0a85b6705192d986684e45ea0cbc743d81e18 bb4e70b6f040ffd7f28dd9e757bd810f4a25bc1a Archie <770211411@qq.com> 1686232327 +0200	commit: update nvm project
+bb4e70b6f040ffd7f28dd9e757bd810f4a25bc1a a7cead760a55ca5a543d33f10d13e648cb9a1075 Archie <770211411@qq.com> 1686673813 +0200	commit: Added basic WiFi configuration project.
