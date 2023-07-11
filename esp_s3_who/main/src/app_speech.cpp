@@ -19,7 +19,7 @@ static const char *TAG = "App/Speech";
 static void spiffs_init(void)
 {
     ESP_LOGI(TAG, "Initializing SPIFFS");
-
+    //实例化轻量型文件结构体并初始化
     esp_vfs_spiffs_conf_t conf = {
         .base_path = "/srmodel",
         .partition_label = "model",
@@ -55,7 +55,7 @@ static void spiffs_init(void)
         ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
     }
 }
-
+//I2S初始化,I2S主要用于音频通讯
 static void i2s_init(void)
 {
     i2s_config_t i2s_config = {
@@ -63,7 +63,7 @@ static void i2s_init(void)
         .sample_rate = 16000,                                // must be the same as DSP configuration
         .bits_per_sample = (i2s_bits_per_sample_t)32,        // must be the same as DSP configuration
         .channel_format = I2S_CHANNEL_FMT_ONLY_LEFT,         // must be the same as DSP configuration
-        .communication_format = I2S_COMM_FORMAT_STAND_I2S,
+        .communication_format = I2S_COMM_FORMAT_STAND_I2S,   /*!< I2S communication I2S Philips standard, data launch at second BCK*/
         .intr_alloc_flags = ESP_INTR_FLAG_LEVEL2,
         .dma_buf_count = 3,
         .dma_buf_len = 300,
@@ -88,6 +88,7 @@ static void feed_handler(AppSpeech *self)
     size_t samp_len = audio_chunksize * I2S_CHANNEL_NUM;
     size_t samp_len_bytes = samp_len * sizeof(int32_t);
     int32_t *i2s_buff = (int32_t *)malloc(samp_len_bytes);
+    //检查内存是否申请成功,如果成功则继续,如果不成功则返回一个错误
     assert(i2s_buff);
     size_t bytes_read;
     // FILE *fp = fopen("/sdcard/out", "a+");

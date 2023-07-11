@@ -220,7 +220,7 @@ static void task(AppFace *self)
 
                     case FACE_RECOGNIZE://如果上次人脸识别状态为识别人脸,在显示屏中显示识别的人脸ID
                         if (self->recognize_result.id > 0)//如果识别结果大于0,证明识别到人脸,打印识别到的人脸ID
-                            rgb_printf(frame, RGB565_MASK_GREEN, "ID %d", self->recognize_result.id);
+                            rgb_printf(frame, RGB565_MASK_GREEN, "ID %d Similarity:%f", self->recognize_result.id,self->recognize_result.similarity);
                         else
                             rgb_print(frame, RGB565_MASK_RED, "who ?");//如果为识别到匹配的人脸结果,打印为who
                         break;

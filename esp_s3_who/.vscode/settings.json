@@ -79,5 +79,8 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "*.ipp": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false,
+    "idf.flashType": "UART",
+    "idf.portWin": "COM3"
 }

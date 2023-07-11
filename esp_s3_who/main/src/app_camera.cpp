@@ -26,7 +26,7 @@ AppCamera::AppCamera(const pixformat_t pixel_fromat,
     conf.pin_bit_mask = 1LL << 14;
     gpio_config(&conf);
 #endif
-
+    //实例化摄像头参数结构体,并进行初始化
     camera_config_t config;
     config.ledc_channel = LEDC_CHANNEL_0;
     config.ledc_timer = LEDC_TIMER_0;
@@ -54,14 +54,14 @@ AppCamera::AppCamera(const pixformat_t pixel_fromat,
     config.fb_location = CAMERA_FB_IN_PSRAM;
     config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
 
-    // camera init
+    // 摄像头初始化并返回故障码,如果没有故障继续,出现故障退出构造函数
     esp_err_t err = esp_camera_init(&config);
     if (err != ESP_OK)
     {
         ESP_LOGE(TAG, "Camera init failed with error 0x%x", err);
         return;
     }
-
+    //获取一个指针,指针指向图像传感器控制的结构体sensor_t
     sensor_t *s = esp_camera_sensor_get();
     s->set_vflip(s, 1); // flip it back
     // initial sensors are flipped vertically and colors are a bit saturated
